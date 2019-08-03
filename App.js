@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, ImageBackground, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  TextInput,
+  Button
+} from "react-native";
 
 class App extends Component {
   constructor(props) {
@@ -8,12 +15,12 @@ class App extends Component {
     this.state = {
       counter: 0
     };
-    this.buttonClickListener = this.buttonClickListener.bind(this);
+    // this.buttonClickListener = this.buttonClickListener.bind(this);
   }
 
-  buttonClickListener = () => {
+  buttonClickListener = e => {
     this.setState({
-      counter: counter++
+      counter: this.state.counter + 1
     });
   };
 
@@ -27,7 +34,9 @@ class App extends Component {
           <Text style={styles.headerText}>
             How many glasses of water did you have today?
           </Text>
-          <Text>{this.state.counter}</Text>
+          <Text style={styles.headerText}>
+            You have drunk {this.state.counter} glasses of water.
+          </Text>
           <View style={styles.button}>
             <Button
               style={styles.innerbutton}
@@ -67,6 +76,10 @@ const styles = StyleSheet.create({
     // marginBottom: 50
   },
   innerbutton: {
+    borderRadius: 20,
+    overflow: "hidden",
     margin: 20
   }
 });
+
+export default App;
