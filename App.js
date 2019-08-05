@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  ImageBackground,
-  TextInput,
-  Button
-} from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import { Button } from "react-native-elements";
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +9,6 @@ class App extends Component {
     this.state = {
       counter: 0
     };
-    // this.buttonClickListener = this.buttonClickListener.bind(this);
   }
 
   buttonClickListener = e => {
@@ -31,18 +24,44 @@ class App extends Component {
         style={styles.container}
       >
         <View style={styles.inner}>
-          <Text style={styles.headerText}>
-            How many glasses of water did you have today?
+          <Text
+            style={{
+              fontSize: 40,
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "#00bfff"
+            }}
+          >
+            How many glasses of water did you drink today?
           </Text>
-          <Text style={styles.headerText}>
-            You have drunk {this.state.counter} glasses of water.
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "#2F4F4F"
+            }}
+          >
+            I have drunk
+          </Text>
+          <Text style={{ fontSize: 50 }}>{this.state.counter}</Text>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "#2F4F4F"
+            }}
+          >
+            glasses of water.
           </Text>
           <View style={styles.button}>
             <Button
               style={styles.innerbutton}
               onPress={this.buttonClickListener}
               title="Add"
-              color="#00bfff"
+              raised
+              outline
             />
           </View>
         </View>
@@ -61,24 +80,45 @@ const styles = StyleSheet.create({
   inner: {
     width: "75%",
     height: "75%",
-    backgroundColor: "rgba(255, 255, 255, .7)"
-  },
-  headerText: {
+    backgroundColor: "rgba(255, 255, 255, .7)",
     fontSize: 20,
     color: "#2F4F4F",
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center"
+  },
+  headerText: {
+    flex: 1,
+    fontSize: 20,
     textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center",
     fontWeight: "bold"
   },
   button: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
-    // marginBottom: 50
   },
   innerbutton: {
-    borderRadius: 20,
-    overflow: "hidden",
-    margin: 20
+    // width: 100,
+    // height: 100,
+    // shadowColor: "#2F4F4F",
+    // shadowOpacity: 0.7,
+    // shadowRadius: 5,
+    // shadowOffset: {
+    //   height: 1,
+    //   width: 1
+    // },
+    fontSize: 15,
+    borderWidth: 0.9,
+    borderRadius: 10,
+    borderColor: "#d6d7da",
+    color: "#00bfff",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 50
   }
 });
 
