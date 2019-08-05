@@ -34,27 +34,29 @@ class App extends Component {
           >
             How many glasses of water did you drink today?
           </Text>
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-              textAlign: "center",
-              color: "#2F4F4F"
-            }}
-          >
-            I have drunk
-          </Text>
-          <Text style={{ fontSize: 50 }}>{this.state.counter}</Text>
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-              textAlign: "center",
-              color: "#2F4F4F"
-            }}
-          >
-            glasses of water.
-          </Text>
+          <View style={styles.answer}>
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: "bold",
+                textAlign: "center",
+                color: "#2F4F4F"
+              }}
+            >
+              I have drunk
+            </Text>
+            <Text style={{ fontSize: 50 }}>{this.state.counter}</Text>
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: "bold",
+                textAlign: "center",
+                color: "#2F4F4F"
+              }}
+            >
+              glasses of water.
+            </Text>
+          </View>
           <View style={styles.button}>
             <Button
               style={styles.innerbutton}
@@ -83,17 +85,12 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, .7)",
     fontSize: 20,
     color: "#2F4F4F",
-    justifyContent: "center",
-    alignItems: "center",
     alignContent: "center"
   },
-  headerText: {
+  answer: {
     flex: 1,
-    fontSize: 20,
-    textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
-    alignContent: "center",
     fontWeight: "bold"
   },
   button: {
